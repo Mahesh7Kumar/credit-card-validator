@@ -1,0 +1,41 @@
+sum_odd_digits = 0
+sum_even_digits = 0
+total = 0
+
+#step 1
+
+card_number =input('enter the credit card number #:')   #user can enter the card number
+card_number = card_number.replace('-','')      # if the user card number having '-' replace
+card_number = card_number.replace(' ','')      # replace the card number space 
+card_number = card_number[::-1]                #print the card number in reverse
+
+#step 2
+
+for x in card_number[::2]:     #the for loop will having the '[::2]'will this condition the second digits are print 
+    sum_odd_digits += int(x)   #the x value will add in sum odd digits when "int" is used to change the 'x' as 'integer'
+
+
+
+#step 3
+for x in  card_number[1::2]:   # when card number will be stord in 'x'between "first numb" to "second numb"
+    x = int(x * 2)             # multipl the 2 in x
+    if x >= 10:                # in if statement  when x is greater then and equal to 10
+        sum_even_digits += (1 + (x % 10))        # add the 'x' value in sum even digit as reminder of 'x' add with '1'
+    else:
+        sum_even_digits += x   # the 'x' is not greater then and not equal to 10
+
+
+#step 4 
+
+total = sum_odd_digits + sum_even_digits  # then the all Sum odd and even digits are add
+
+#step 5
+
+if total % 10 == 0:
+    print('VALID')
+else:
+    print('INVALID')    
+
+
+    
+
